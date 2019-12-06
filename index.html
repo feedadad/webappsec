@@ -32,8 +32,10 @@
     <li>find /home -name .bashrc</li>
     <li>find /home -name .bashrc -exec grep [PATTERN] {} \;</li>
     <li>find /home -name .bashrc -exec cat {} \; | grep [PATTERN]</li>
-    <li></li>
-    <li></li>
+    <li>find /home -name .bashrc -exec grep [PATTERN] {} \; | grep -v [PATTERN]</li>
+    <li>find /home -name .\*sh_history -exec cat {} \;</li>
+    <li>cat /etc/passwd | grep -v "/home" |grep "::" | cut -d ":" -f6 | xargs -I{} find {} -name .\*sh_history | xargs cat | grep [PATTERN]</li>
+    <li>find /home -name .bash_history -exec grep '^passwd' -A 1 {} \;</li>
 </ol>
 </body>
 </html>
